@@ -1,0 +1,174 @@
+Title: Demonstrating Pelican, a static site generator 
+Latex:
+Date: 2013-06-13 9:33
+Category: Coding 
+Tags: foss, software, webdev 
+Slug: pelican-demo 
+Author: Terri Yu
+
+<!-- PELICAN_BEGIN_SUMMARY -->
+
+<div id="wrapper" style="width:100%; text-align:center">
+    <img src="http://terriyu.info/blog/static/images/pelican-docs-800px.png" alt="Pelican logo and Github account" />
+</div>
+<br />
+
+When I was setting up this blog, I initially started with 
+[Wordpress](http://wordpress.org/), but then I discovered that many (tech-savvy)
+people were using static site generators.
+
+It took me some time to understand what that meant.  Most of the common
+blogging platforms generate websites dynamically.  Wordpress requires SQL to
+manage a database containing your blog content.  When someone loads your blog
+URL, Wordpress generates the requested webpage.  Wordpress must be installed on
+your webhost/server for this to work.  
+
+The idea behind static site generators is to have software on your local
+machine that creates webpages and then upload these pages to the webhost.  The
+webpages have fixed content, hence the description "static site."  You don't
+need to install anything on the webhost. 
+
+<!-- PELICAN_END_SUMMARY -->
+
+For a small personal blog, a static site makes a lot of sense because you
+
++ Avoid the security issues of having software (like Wordpress) installed on
+  your webhost
++ Don't need to worry about upgrading and maintaining server-side software
+  (like Wordpress)
++ Can write blog posts in some type of markdown, which is a lot more user
+  friendly than composing posts in a browser GUI[^1]
++ Can exercise version control on the static web content
++ Can easily move your website somewhere else because your website is just a
+  bunch of static files 
+
+In practice, I wanted my blog to have the following features:
+
++ Ability to write posts in markdown
++ Footnotes
++ Syntax highlighting, especially for code
++ Ability to render $\LaTeX$ 
+
+I can show that all of that is possible in
+[Pelican](http://docs.getpelican.com), a static site generator written in
+Python.  (Needless to say, I'm using Pelican[^2] for this blog.)
+
+Markdown
+--------
+
+### Emphasis
+
+This is *extremely* **important**.
+
+### Lists
+
+Some things I'd like to do someday
+
++ Skate the canals in the Netherlands
++ Build my own computer
++ Write my own software project
++ Finish *Baldur's Gate*
++ Publish an essay
+
+Top 5 console games
+
+1. Paper Mario: Thousand Year Door (Gamecube)
+2. Prince of Persia trilogy (The Sands of Time, Warrior Within, The Two Thrones) (console/PC)
+3. Chrono Trigger (SNES/DS)
+4. Phoenix Wright series (GBA/DS)
+5. The Legend of Zelda: Twilight Princess (Gamecube/Wii)
+
+### Blockquote
+
+Some quotes I like:
+
+Literary
+
+> Having to read a footnote resembles having to go downstairs to answer the
+> door while in the midst of making love.[^3]  
+
+Self-reliance
+
+> A human being should be able to change a diaper, plan an invasion, butcher
+> a hog, conn a ship, design a building, write a sonnet, balance accounts,
+> build a wall, set a bone, comfort the dying, take orders, give orders,
+> cooperate, act alone, solve equations, analyze a new problem, pitch manure,
+> program a computer, cook a tasty meal, fight efficiently, die gallantly.
+> Specialization is for insects.[^4]
+
+### Images
+
+Who can resist cute cats?  (Yes, that is my photo and those are our cats.)
+
+![Cats cuddling at night](|filename|/images/cuddling-cats-800x600.jpg)
+
+### Horizontal rule
+
+- - - - -
+
+Syntax highlighting
+-------------------
+
+### Inline highlighting
+
+Some Python keywords are `lambda`, `import`, and `while`.
+
+### Block of code
+
+    :::python
+    def factorial(n):
+        if n == 0:
+            return 1
+        else:
+            return n * factorial(n-1)
+
+- - - - -
+
+$\LaTeX$ symbols
+----------------
+
+### Inline LaTeX symbols
+
+I *always* seem to run out of Greek letters like $\alpha, \beta, \gamma$.
+
+### {equation} environment
+
+$$
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}\Psi = \hat{H}\Psi
+\end{equation}
+$$
+
+### {eqnarray} environment
+
+Do you know what these equations are?
+
+$$
+\begin{eqnarray}
+\nabla \cdot \vec{E} &=& 4\pi\rho \\\
+\nabla \cdot \vec{B} &=& 0 \\\
+\nabla \times \vec{E} &=& -\frac{1}{c}\frac{\partial \vec{B}}{\partial t} \\\
+\nabla \times \vec{B} &=& \frac{1}{c}\left(4\pi\vec{J} + \frac{\partial \vec{E}}{\partial t}\right)
+\end{eqnarray}
+$$
+
+The famous Maxwell's Equations[^5] describing electrodynamics in a vacuum!
+
+For the eqnarray environment, I noticed that I had to use `\\\` instead of `\\`
+for the line breaks.
+
+Source 
+------
+
+The Markdown file used to generate this post is available 
+[here](|filename|/code/pelican-demo.txt).  I had to change the `.md` extension
+to `.txt` to avoid confusing the Pelican compiler.
+
+[^1]: I used to write my blog posts in HTML, in the blogging software's GUI.  I
+      constantly fought the software reformatting my edits and changing the
+      whitespace.
+[^2]: Top image taken from 
+      [Pelican documentation page](http://docs.getpelican.com/en/latest/)
+[^3]: Attributed to Noel Coward
+[^4]: From *Time Enough to Love* by Robert Heinlein
+[^5]: In cgs units, of course! 
