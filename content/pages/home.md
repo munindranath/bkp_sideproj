@@ -9,6 +9,7 @@ status:
 </style>
 <p>
 </p>
+
 ---------- ----------------------------------------------
 project:   [upcoming](http://localhost:8000/category/project)<br></br>
 reading:   [list](http://localhost:8000/category/reading)<br></br>
@@ -18,4 +19,3 @@ misc:      [misc](http://localhost:8000/category/misc)<br></br>
 
 <p>
 </p>
-

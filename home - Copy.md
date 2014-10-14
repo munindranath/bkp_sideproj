@@ -1,7 +1,7 @@
 Title: home
 URL:
-save_as: index.html
-status: hidden
+save_as: 
+status:
 
 <style>
 {width:50%; border-collapse:collapse;}<br></br>
@@ -9,7 +9,6 @@ status: hidden
 </style>
 <p>
 </p>
-
 ---------- ----------------------------------------------
 project:   [upcoming](http://localhost:8000/category/project)<br></br>
 reading:   [list](http://localhost:8000/category/reading)<br></br>
@@ -17,6 +16,6 @@ blog:      [blog](http://localhost:8000/category/blog)<br></br>
 misc:      [misc](http://localhost:8000/category/misc)<br></br>
 ---------- ----------------------------------------------
 
-
 <p>
 </p>
+

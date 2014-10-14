@@ -62,7 +62,7 @@ NEWEST_FIRST_ARCHIVES = False
 STATIC_PATHS = ['images', 'code']
 
 # Specify theme
-THEME = "pelican-themes-master/bootstrap"
+THEME = "bootstrap"
 
 # Plugins
 PLUGIN_PATH = 'pelican-plugins'
